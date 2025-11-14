@@ -1,7 +1,8 @@
-// while loops
-let count = 0;
-while (count <= 5) {
-    console.log("Count is: " + count);
-    count++;
-}
+// do while loops
+let money = 0;
 
+do {
+  console.log("You have $" + money + " available.");
+  money++;
+} while (money < 10);
+console.log("End at: $" + money + ".");
