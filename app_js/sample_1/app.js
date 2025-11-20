@@ -1,23 +1,16 @@
-// Understanding Global vs Local scope in JavaScript
-let userName = "Alice";
-let age = 25;
-console.log("Initial userName: ", userName);
-console.log("Initial age: ", age);
+// forEach Array Method Example
+const people = [
+  { name: 'Alice', age: 25, position: 'Developer' },
+  { name: 'Bob', age: 30, position: 'Designer' },
+  { name: 'Charlie', age: 35, position: 'Manager' }
+];
 
-function calculate() {
-  // some other code
-  console.log("call 1: ", userName);
-  userName = "Charlie";
-  let age = 30;
-  console.log("Inside calc function - age: ", age);
-}
-calculate();
+people.forEach(function(person) {
+    console.log(person.name);
+});
 
-if (true) {
-  //some other code
-  console.log("call 2: ", userName);
-  userName = "David";
-  console.log("Outside calc function - age: ", age);
-}
+// Output:
+// Alice
+// Bob
+// Charlie
 
-console.log("call 3: ", userName);
