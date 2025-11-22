@@ -1,15 +1,22 @@
-// find Method Example
-const people = [
-  { name: 'Alice', age: 25, position: 'Developer', id: 1 },
-  { name: 'Bob', age: 30, position: 'Designer', id: 2 },
-  { name: 'Charlie', age: 35, position: 'Manager', id: 3 }
-];
+const h1 = document.getElementById('title');
+h1.style.color = 'red';
 
-const person = people.find((person) => person.position === 'Designer');
-console.log(person); // { name: 'Bob', age: 30, position: 'Designer', id: 2 }
+const headings = document.getElementsByTagName('h2');
+console.log(headings);
+console.log(headings.length);
+headings[0].style.color = 'blue';
 
-const person2 = people.find(function(person) {
-  return person.id === 3;
+const items = document.getElementsByTagName('li');
+console.log(items);
+
+const listedItems = Array.from(items);
+const listedItems2 = [...items];
+console.log(listedItems);
+console.log(listedItems2);
+
+listedItems[1].style.fontWeight = 'bold';
+listedItems.forEach((item) => {
+    item.style.color = 'green';
+    item.style.fontSize = '20px';
 });
-console.log(person2); // { name: 'Charlie', age: 35, position: 'Manager', id: 3 }
 
