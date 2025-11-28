@@ -1,15 +1,11 @@
+const btn = document.querySelector(".btn");
+const link = document.getElementById("link");
+const container = document.querySelector(".container");
+const list = document.querySelector(".list-items");
 
-const btn = document.querySelector('.btn');
-const nameInput = document.querySelector('#name');
+function showBubbling(e) {
+  console.log("Cuurent Target:", e.currentTarget);
+  console.log("Target:", e.target);
+}
 
-nameInput.addEventListener('keypress', function(e) {
-    console.log(`You pressed a key: "${e.key}"`);
-});
-
-nameInput.addEventListener('keydown', function(e) {
-    console.log(`Key down: "${e.key}"`);
-});
-
-nameInput.addEventListener('keyup', function(e) {
-    console.log(`Key up: "${e.key}"`);
-});
+list.addEventListener("click", showBubbling);
