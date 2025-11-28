@@ -1,11 +1,12 @@
 const btn = document.querySelector(".btn");
-const link = document.getElementById("link");
-const container = document.querySelector(".container");
-const list = document.querySelector(".list-items");
+const form = document.querySelector("form");
+const name = document.querySelector("#name");
+const password = document.querySelector("#password");
 
-function showBubbling(e) {
-  console.log("Cuurent Target:", e.currentTarget);
-  console.log("Target:", e.target);
-}
-
-list.addEventListener("click", showBubbling);
+// console.log(btn, form, name, password);
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("Form submitted!");
+  console.log("Name:", e.target.name.value);
+  console.log("Password:", e.target.password.value);
+});
