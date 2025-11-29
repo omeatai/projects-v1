@@ -1,12 +1,25 @@
 const btn = document.querySelector(".btn");
 const form = document.querySelector("form");
-const name = document.querySelector("#name");
-const password = document.querySelector("#password");
+const nameInput = document.querySelector("#name");
 
-// console.log(btn, form, name, password);
+function sayHello() {
+    console.log(`Hello ${nameInput.value || "Jasmine!"}`);
+}
+
+function showScore(name, score) {
+    console.log(`${name}, your score is ${score}%.`);
+}
+
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  console.log("Form submitted!");
-  console.log("Name:", e.target.name.value);
-  console.log("Password:", e.target.password.value);
+    e.preventDefault();
+    const firstID = setTimeout(sayHello, 1000);
+    const secondID = setTimeout(function () {
+        console.log("Would you like to know your score?");
+    }, 3000);
+    const thirdID = setTimeout(showScore, 5000, nameInput.value || "Jasmine", 95);
+
+    // To cancel the timeouts, uncomment the lines below
+    // clearTimeout(firstID);
+    // clearTimeout(secondID);
+    // clearTimeout(thirdID);
 });
